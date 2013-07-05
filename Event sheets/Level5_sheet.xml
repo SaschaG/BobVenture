@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level5_sheet</name>
+    <events>
+        <include>Player</include>
+        <include>Enemies</include>
+        <event-block sid="3146368104821001">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="3509103670902956" type="Player">
+                    <param id="0" name="Object">Sprite</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="221285573093451" type="System" />
+                <action id="-2" name="Go to layout" sid="3555477474404973" type="System">
+                    <param id="0" name="Layout">YouWon</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

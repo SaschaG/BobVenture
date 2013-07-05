@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Player</name>
+    <events>
+        <include>Enemies</include>
+        <variable constant="0" name="DodgeCoolDown" sid="6608029815270542" static="0" type="number">0</variable>
+        <variable constant="0" name="Dodge" sid="9040388179872846" static="0" type="number">0</variable>
+        <event-block sid="132657694341718">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="9489431406555652" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="683182805183068" type="Player_Animation">
+                    <param id="0" name="Object">Player</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="8304000107310102" type="BloodB">
+                    <param id="0" name="Object">Player_Animation</param>
+                    <param id="1" name="Image point (optional)">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Use the down arrow to allow the player to dodge</comment>
+        <event-block sid="9285124731982546">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="1472918392200309" type="System">
+                    <param id="0" name="Variable">DodgeCoolDown</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition behavior="Platform" id="2" name="Is on floor" sid="7596708249690004" type="Player" />
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="5219055985509182" type="Player">
+                    <param id="0" name="Instance variable">dead</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block any="1" sid="1039837271162395">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="1100662139242814" type="Keyboard">
+                            <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="8631121055649855" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="6800781885859545" type="Player_Animation">
+                            <param id="0" name="Animation">&quot;ducken&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="6077943314917956" type="Player">
+                            <param id="0" name="Animation">&quot;dodge&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2288551020656769" type="System">
+                            <param id="0" name="Variable">Dodge</param>
+                            <param id="1" name="Value">25</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8579720272141632" type="System">
+                            <param id="0" name="Variable">DodgeCoolDown</param>
+                            <param id="1" name="Value">30</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5000687912860772">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block collapsed="1" sid="6354963837264875">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="6975260114163208" type="System">
+                    <param id="0" name="Variable">Dodge</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="0" name="Set ignoring input" sid="87437649543845" type="Player">
+                    <param id="0" name="Input">1</param>
+                </action>
+                <action behavior="Platform" id="1" name="Set max speed" sid="9104436847080298" type="Player">
+                    <param id="0" name="Max Speed">400</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="5782205265270964" type="System">
+                    <param id="0" name="Variable">Dodge</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="4249715620889559" type="System">
+                    <param id="0" name="Variable">DodgeCoolDown</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="3204411530011537" type="Player">
+                    <param id="0" name="Object">Fart</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="1804167245852488">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="8669374760787539" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="4529858317064077" type="Player_Animation">
+                            <param id="0" name="Animation">&quot;ducken&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="3250364847566743" type="Player">
+                            <param id="0" name="Animation">&quot;dodge&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="3163106817484318">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="1419068716159288" type="Keyboard">
+                            <param id="0" name="Key">38 (Up arrow)</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="1747091008182126" type="Keyboard">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="0" name="Set ignoring input" sid="431215897710979" type="Player">
+                            <param id="0" name="Input">0</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="8467270929960887" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5533249541179353">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="7005389321837851" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action id="-18" name="Rotate clockwise" sid="1449317738772923" type="Fart">
+                                    <param id="0" name="Degrees">-65</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5734063367325759">
+                            <conditions>
+                                <condition id="7" name="Is mirrored" sid="2825943113373383" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action id="-18" name="Rotate clockwise" sid="4820653039012672" type="Fart">
+                                    <param id="0" name="Degrees">65</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7956621261932341">
+                    <conditions>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="5213322056675645" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="8802752636027678" type="Player">
+                            <param id="0" name="Vector X">400</param>
+                        </action>
+                        <action id="-18" name="Rotate clockwise" sid="3274009421393272" type="Fart">
+                            <param id="0" name="Degrees">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4617228991698048">
+                    <conditions>
+                        <condition id="7" name="Is mirrored" sid="1677939038349761" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="2574576648276831" type="Player">
+                            <param id="0" name="Vector X">-400</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3841086061504752">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3078390694417177" type="System">
+                    <param id="0" name="Variable">Dodge</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="0" name="Set ignoring input" sid="6245793098527591" type="Player">
+                    <param id="0" name="Input">0</param>
+                </action>
+                <action behavior="Platform" id="1" name="Set max speed" sid="5364969039397547" type="Player">
+                    <param id="0" name="Max Speed">230</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8289548092341643">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9149938434411522" type="System">
+                    <param id="0" name="Variable">DodgeCoolDown</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="2" inverted="1" name="Key is down" sid="5955939576027869" type="Keyboard">
+                    <param id="0" name="Key">40 (Down arrow)</param>
+                </condition>
+                <condition id="2" inverted="1" name="Key is down" sid="1036291279028719" type="Keyboard">
+                    <param id="0" name="Key">83 (S)</param>
+                </condition>
+                <condition id="-14" inverted="1" name="Compare variable" sid="262007535360436" type="System">
+                    <param id="0" name="Variable">Dodge</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="6075944869386838" type="System">
+                    <param id="0" name="Variable">DodgeCoolDown</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Allow WASD as alternate controls to arrow keys.</comment>
+        <event-block sid="8431769548592548">
+            <conditions>
+                <condition id="2" name="Key is down" sid="587204585685723" type="Keyboard">
+                    <param id="0" name="Key">87 (W)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="4049810246699779" type="Player">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3925521917248398">
+            <conditions>
+                <condition id="2" name="Key is down" sid="6435586545907839" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="4269608094239845" type="Player">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="151804299631248">
+            <conditions>
+                <condition id="2" name="Key is down" sid="1284589021522543" type="Keyboard">
+                    <param id="0" name="Key">83 (S)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="12" name="Fall through" sid="1458251243656714" type="Player" />
+            </actions>
+        </event-block>
+        <event-block sid="2285327293712757">
+            <conditions>
+                <condition id="2" name="Key is down" sid="7568955282247944" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="5984237223409215" type="Player">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Mirror the player&apos;s image so they appear facing the right way when moving left or right.</comment>
+        <event-block any="1" sid="5220453405001807">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="975094442463989" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="769899371880744" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="638215823387871">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="9353944524208896" type="Player">
+                            <param id="0" name="Instance variable">dead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="8805364192484237" type="Player_Animation">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="8046194044938122" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="3" name="Start" sid="7408593614125973" type="Player_Animation">
+                            <param id="0" name="From">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="8272322861615532" type="BloodB">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="5363476005120682">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="7974907195858101" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="256918642800981" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5890886326197517">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3603409070914522" type="Player">
+                            <param id="0" name="Instance variable">dead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="3552329044950653" type="Player_Animation">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="5702676377315084" type="Player">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="3" name="Start" sid="7152530321015048" type="Player_Animation">
+                            <param id="0" name="From">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="3632980191531489" type="BloodB">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>If the player falls off the bottom of the layout, restart the level.</comment>
+        <event-block sid="3438718069556841">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="2668398606904361" type="Player">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight+100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="4995753774540917" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="779489407119936">
+            <conditions>
+                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="729868596764777" type="Player" />
+                <condition id="2" inverted="1" name="Key is down" sid="6904005915720276" type="Keyboard">
+                    <param id="0" name="Key">40 (Down arrow)</param>
+                </condition>
+                <condition id="2" inverted="1" name="Key is down" sid="7870857556089278" type="Keyboard">
+                    <param id="0" name="Key">83 (S)</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3408689586906997" type="Player">
+                    <param id="0" name="Instance variable">dead</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="2" name="Stop" sid="4937547863664544" type="Player_Animation" />
+                <action id="5" name="Set frame" sid="1951096717457429" type="Player_Animation">
+                    <param id="0" name="Frame number">8</param>
+                </action>
+                <action id="2" name="Stop" sid="1469005789483983" type="Player" />
+                <action id="5" name="Set frame" sid="7035602198665862" type="Player">
+                    <param id="0" name="Frame number">8</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5953294519471584">
+            <conditions>
+                <condition behavior="Platform" id="5" name="On jump" sid="521529733449315" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="1366680195457713" type="Player_Animation">
+                    <param id="0" name="Animation">&quot;jump&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6639650774323766">
+            <conditions>
+                <condition behavior="Platform" id="2" name="Is on floor" sid="1461799927775065" type="Player" />
+                <condition id="-14" inverted="1" name="Compare variable" sid="6605483892530462" type="System">
+                    <param id="0" name="Variable">Dodge</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3014755674064085" type="Player">
+                    <param id="0" name="Instance variable">dead</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="8197732833382665" type="Player_Animation">
+                    <param id="0" name="Animation">&quot;walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="907289098666978" type="Player">
+                    <param id="0" name="Animation">&quot;walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4023712601481562">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="6615583709095833" type="Player">
+                    <param id="0" name="Object">Block2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="8414355916244194" type="Player_Animation">
+                    <param id="0" name="Animation">&quot;ducken&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="3544729716595733" type="Player">
+                    <param id="0" name="Animation">&quot;dodge&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="6826557646274913" type="System">
+                    <param id="0" name="Variable">Dodge</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="-9" name="Set value" sid="573041171539304" type="System">
+                    <param id="0" name="Variable">DodgeCoolDown</param>
+                    <param id="1" name="Value">7</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Kill The Fart</comment>
+        <event-block sid="9576597657866281">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="5853721775520686" type="System" />
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="4490233114342597" type="Fart">
+                    <param id="0" name="Instance variable">LifeTimer</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="5614417739246249">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4921916846155874" type="Fart">
+                            <param id="0" name="Instance variable">LifeTimer</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="1753855817347855" type="Fart" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Let the Player die</comment>
+        <event-block sid="133388536435802">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="7283936941732427" type="Player">
+                    <param id="0" name="Instance variable">dead</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="7848058197684767" type="Player">
+                    <param id="0" name="Instance variable">deathTimer</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">90</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="0" name="Set ignoring input" sid="533595129707115" type="Player">
+                    <param id="0" name="Input">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="828296161326971" type="Player_Animation">
+                    <param id="0" name="Animation">&quot;death&quot;</param>
+                    <param id="1" name="From">0</param>
+                </action>
+                <action id="3" name="Start" sid="5077994607731606" type="BloodB">
+                    <param id="0" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9511121196813587">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="6857089210528871" type="Player">
+                    <param id="0" name="Instance variable">dead</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="5656466336787219" type="Player">
+                    <param id="0" name="Instance variable">deathTimer</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Platform" id="0" name="Set ignoring input" sid="716497605433005" type="Player">
+                    <param id="0" name="Input">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2186595599902548">
+            <conditions>
+                <condition id="-22" name="Else" sid="7844136595547689" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="6657530891943311" type="BloodB">
+                    <param id="0" name="Frame number">8</param>
+                </action>
+                <action id="2" name="Stop" sid="692462114736683" type="BloodB" />
+            </actions>
+        </event-block>
+        <event-block sid="8852600123373476">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="2770748038570273" type="Player">
+                    <param id="0" name="Instance variable">deathTimer</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="9262275672291629" type="System" />
+                <action id="-21" name="Reset global variables" sid="837602372172668" type="System" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level2_sheet</name>
+    <events>
+        <include>Player</include>
+        <include>Enemies</include>
+        <comment>Changing the Level</comment>
+        <event-block sid="887434592584415">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="257918907980936" type="Player">
+                    <param id="0" name="Object">Sprite</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="6643495097753082" type="System">
+                    <param id="0" name="Layout">Level3</param>
+                </action>
+                <action id="-21" name="Reset global variables" sid="1950422543898824" type="System" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

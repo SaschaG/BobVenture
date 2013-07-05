@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Enemies</name>
+    <events>
+        <variable constant="0" name="Start_Rain" sid="802007447075792" static="0" type="number">0</variable>
+        <variable constant="0" name="Zacke_Rain_Spawn_Timer" sid="8644657007054767" static="0" type="number">20</variable>
+        <comment>Making the saw</comment>
+        <event-block sid="3434693552135671">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="8186730456302821" type="Saw">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="3420454589523985" type="Player">
+                    <param id="0" name="Instance variable">dead</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Making the Moving saw</comment>
+        <event-block sid="8441401442946552">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="7157301879411189" type="Moving_Saw">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="1406951957530342" type="Player">
+                    <param id="0" name="Instance variable">dead</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7288633677509508">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="751793850908283" type="Moving_Saw">
+                    <param id="0" name="Object">Moving_Saw_Marker_Bottom</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="3997935501234838" type="Moving_Saw">
+                    <param id="0" name="Angle">90</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6961996977348333">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6194970279948314" type="Moving_Saw">
+                    <param id="0" name="Object">Moving_Saw_Marker_Bottom_Left</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="5879613652935043" type="Moving_Saw">
+                    <param id="0" name="Angle">135</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5189261726438042">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6758610446069274" type="Moving_Saw">
+                    <param id="0" name="Object">Moving_Saw_Marker_Bottom_Right</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="7296471773777526" type="Moving_Saw">
+                    <param id="0" name="Angle">45</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7939662129261783">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6592871390062586" type="Moving_Saw">
+                    <param id="0" name="Object">Moving_Saw_Marker_Left</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="209529720209548" type="Moving_Saw">
+                    <param id="0" name="Angle">180</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9040308504296919">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="9239252823357335" type="Moving_Saw">
+                    <param id="0" name="Object">Moving_Saw_Marker_Right</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="6621989082567805" type="Moving_Saw">
+                    <param id="0" name="Angle">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6909902651772502">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="2617849578289591" type="Moving_Saw">
+                    <param id="0" name="Object">Moving_Saw_Marker_Top_Right</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="1773589413895781" type="Moving_Saw">
+                    <param id="0" name="Angle">315</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3276481923068992">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="5686873395140552" type="Moving_Saw">
+                    <param id="0" name="Object">Moving_Saw_Marker_Top</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="3366981109169907" type="Moving_Saw">
+                    <param id="0" name="Angle">270</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7029969092117467">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6913769229887848" type="Moving_Saw">
+                    <param id="0" name="Object">Moving_Saw_Marker_Top_Left</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2615017391533943" type="Moving_Saw">
+                    <param id="0" name="Angle">225</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Making the Lady_Tank</comment>
+        <event-block sid="9948433501973594">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="7769842312080021" type="Lady_Tank">
+                    <param id="0" name="Object">LadyTank_Marker</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7842567447403908">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="8800742822983299" type="Lady_Tank">
+                            <param id="0" name="Instance variable">Move_Left</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="5353359731378181" type="Lady_Tank">
+                            <param id="0" name="Instance variable">Move_Right</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="3337336653394269" type="Lady_Tank">
+                            <param id="0" name="Instance variable">Move_Left</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="3" name="Start" sid="2210021554083386" type="Lady_Tank">
+                            <param id="0" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4255479684371741">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="5495464771377991" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="3895634504894735" type="Lady_Tank">
+                            <param id="0" name="Instance variable">Move_Right</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="2336178940682121" type="Lady_Tank">
+                            <param id="0" name="Instance variable">Move_Left</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7528882937137652">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="3100693799358858" type="Lady_Tank">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="8577870848048853" type="Player">
+                    <param id="0" name="Instance variable">dead</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="2618840718455831">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3505752274615318" type="Lady_Tank">
+                            <param id="0" name="Instance variable">Move_Right</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="8966734210573804" type="Lady_Tank">
+                            <param id="0" name="Instance variable">Move_Right</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7352604295802341">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="3058974894098917" type="Lady_Tank">
+                            <param id="0" name="Instance variable">Move_Right</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="1709490917195009" type="Lady_Tank">
+                            <param id="0" name="Instance variable">Move_Right</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7926534910363364">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="8092964555095411" type="System" />
+                <condition id="-8" name="Is boolean instance variable set" sid="100846060882839" type="Lady_Tank">
+                    <param id="0" name="Instance variable">Move_Right</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="5587128906243926" type="Lady_Tank">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Platform" id="7" name="Simulate control" sid="3298800245234382" type="Lady_Tank">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5672623688098608">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="9781237380904348" type="System" />
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="9101404587602341" type="Lady_Tank">
+                    <param id="0" name="Instance variable">Move_Right</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="5999835480871874" type="Lady_Tank">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Platform" id="7" name="Simulate control" sid="9046762144368469" type="Lady_Tank">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="782237817970078">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="3942784986772496" type="System" />
+                <condition id="-14" name="Compare variable" sid="2388594096881997" type="System">
+                    <param id="0" name="Variable">Zacke_Rain_Spawn_Timer</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="1049239435791719" type="Falling_Stone_Area">
+                    <param id="0" name="Object">Falling_Stones</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">random(0,31)</param>
+                </action>
+                <action id="5" name="Set frame" sid="5132156838516002" type="Falling_Stones">
+                    <param id="0" name="Frame number">random(0,5)</param>
+                </action>
+                <action id="2" name="Stop" sid="5798909260805291" type="Falling_Stones" />
+                <action id="0" name="Spawn another object" sid="5845843294354955" type="Falling_Stones">
+                    <param id="0" name="Object">Spikes_Hitbox</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="6270878743623278" type="System">
+                    <param id="0" name="Variable">Zacke_Rain_Spawn_Timer</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7129749060071987">
+            <conditions>
+                <condition id="-22" name="Else" sid="7483385268483035" type="System" />
+                <condition id="-14" name="Compare variable" sid="8320498033024997" type="System">
+                    <param id="0" name="Variable">Start_Rain</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="7957430574161925" type="System">
+                    <param id="0" name="Variable">Zacke_Rain_Spawn_Timer</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4041926238437683">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="6610227288872334" type="Falling_Stone_Area">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="7245079864932664" type="System">
+                    <param id="0" name="Variable">Start_Rain</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="65055348146655">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="4845348952032068" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="4095925359883517" type="Spikes_Hitbox">
+                    <param id="0" name="Object">Falling_Stones</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7229820340185103">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="1793953016085868" type="Spikes_Hitbox">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="8182388373317153" type="Player">
+                    <param id="0" name="Instance variable">dead</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
