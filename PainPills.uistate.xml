@@ -13,6 +13,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout>StartScreen</layout>
         <layout active="1">Level6</layout>
         <event-sheet>Level5_sheet</event-sheet>
+        <event-sheet>Enemies</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />

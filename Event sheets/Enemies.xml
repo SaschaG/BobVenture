@@ -248,6 +248,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>Let the SPikes fall from Top</comment>
         <event-block sid="782237817970078">
             <conditions>
                 <condition id="-1" name="Every tick" sid="3942784986772496" type="System" />
@@ -274,7 +275,7 @@
                 </action>
                 <action id="-9" name="Set value" sid="6270878743623278" type="System">
                     <param id="0" name="Variable">Zacke_Rain_Spawn_Timer</param>
-                    <param id="1" name="Value">20</param>
+                    <param id="1" name="Value">30</param>
                 </action>
             </actions>
         </event-block>
@@ -304,6 +305,17 @@
                 <action id="-9" name="Set value" sid="7245079864932664" type="System">
                     <param id="0" name="Variable">Start_Rain</param>
                     <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3865414387621916">
+            <conditions>
+                <condition id="-22" name="Else" sid="181308833898474" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="1833027299250926" type="System">
+                    <param id="0" name="Variable">Start_Rain</param>
+                    <param id="1" name="Value">0</param>
                 </action>
             </actions>
         </event-block>
