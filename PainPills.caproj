@@ -710,6 +710,7 @@
         <layout>Level3.xml</layout>
         <layout>Level4.xml</layout>
         <layout>Level5.xml</layout>
+        <layout>Level6.xml</layout>
         <layout>YouWon.xml</layout>
     </layout-folder>
     <event-folder expanded="1">

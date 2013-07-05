@@ -11,11 +11,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout>StartScreen</layout>
-        <layout>Level4</layout>
-        <layout>Level5</layout>
-        <event-sheet>Enemies</event-sheet>
-        <event-sheet>Level3_sheet</event-sheet>
-        <event-sheet active="1">Level5_sheet</event-sheet>
+        <layout active="1">Level6</layout>
+        <event-sheet>Level5_sheet</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
